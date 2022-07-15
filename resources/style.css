@@ -26,6 +26,7 @@ body nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 2;
 }
 
 #homepage-link {
@@ -62,14 +63,22 @@ nav ul li a:hover {
 /* Main */
 
 main {
-  margin-top: 2.75rem;
+  margin-top: 2.5rem;
+}
+
+.banner {
+  max-width: 80%;
+  min-height: 300px;
+  margin: 6rem auto;
+  background-color: lightsteelblue;
 }
 
 .banner header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5.5rem;
+  /* margin-top: 6.5rem; */
+  padding: 0.5rem 0;
 }
 
 main img {
