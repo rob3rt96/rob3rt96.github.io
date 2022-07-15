@@ -23,6 +23,17 @@ body nav {
   background-color: dodgerblue;
   position: fixed;
   top: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#homepage-link {
+  text-decoration: none;
+}
+
+#homepage-link:visited {
+  color: rgb(243, 154, 53);
 }
 
 nav ul {
