@@ -1,55 +1,93 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
 
-  html {
-    font-size: 16px;
-  }
+html {
+  font-size: 16px;
+}
 
-  body {
-    background-color: papayawhip;
-  }
-  
-  body nav {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 1.5rem;
-    width: 100%;
-    min-height: 2.5rem;
-    color: dimgray;
-    background-color: #0F87D6;
-    position: fixed;
-  }
+body {
+  background-color: azure;
+}
 
-  nav ul {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-  }
 
-  nav ul li {
-    transition: all 0.3s linear;
-  }
+/* Nav bar */
 
-  nav ul li:hover {
-    opacity: 0.7;
-    text-decoration: underline;
-  }
+body nav {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.5rem;
+  width: 100%;
+  min-height: 2.5rem;
+  background-color: dodgerblue;
+  position: fixed;
+  top: 0px;
+}
 
-  main img {
-    max-width: 300px;
-    border-radius: 50%;
-  }
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+}
 
-  main h1 {
-    font-family: 'Noto Serif', serif;
-    font-size: 4rem;
-  }
+nav ul li a {
+  color: rgb(241, 175, 33);
+  text-decoration: none;
+  transition: all 0.3s linear;
+}
 
-  main h2 {
-    font-family: 'Noto Serif', serif;
-    font-size: 2.75rem;
-  }
+nav ul li a:hover {
+  color: dimgray;
+  text-decoration: underline;
+}
+
+
+/* Main */
+
+main {
+  margin-top: 2.75rem;
+}
+
+.banner header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5.5rem;
+}
+
+main img {
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+main h1 {
+  font-family: 'Noto Serif', serif;
+  font-size: 3rem;
+}
+
+main h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: 2.25rem;
+}
+
+
+/* Footer */
+
+footer {
+  /* position: relative;
+  bottom: 0px; */
+  margin-top: 200px;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+footer ul li {
+  margin-left: 1rem;
+}
