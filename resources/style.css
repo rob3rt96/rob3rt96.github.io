@@ -101,6 +101,7 @@ main h2 {
   font-size: 2.25rem;
 }
 
+
 /* ==== Projects ==== */
 .projects {
   max-width: 80%;
@@ -114,17 +115,23 @@ main h2 {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
+  /* margin: 0 auto; */
   /* flex: 0 1 350px; */
 }
 
-.proj-container .project {
+.project {
+  background-color: hsl(22, 65%, 35%);
   margin-left: 1.25rem;
-  max-width: 450px;
+  /* max-width: 450px; */
+  width: 450px;
+  height: 400px;
+  overflow: hidden;
 }
 
-.project img {
+.project img, .project h3 {
   max-width: 100%;
   height: auto;
+  margin: 0 auto;
 }
 
 
