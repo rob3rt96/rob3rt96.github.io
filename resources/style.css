@@ -110,6 +110,7 @@ main {
 main .banner img {
   max-width: 300px;
   border-radius: 50%;
+  margin-top: 1rem;
 }
 
 .text-container {
@@ -132,7 +133,7 @@ main h2 {
   max-width: 80%;
   min-height: 800px;
   margin: 3rem auto;
-  padding: 2rem 0;
+  padding: 3rem 0;
   background-color: hsl(194, 70%, 40%);
 }
 
@@ -158,6 +159,7 @@ main h2 {
 .project h3 {
   max-width: 60%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .image-container {
@@ -168,32 +170,29 @@ main h2 {
 }
 
 .image-container .overlay {
-  display: none;
   position: relative;
   width: 300px;
   height: 300px;
-  background-color: gray;
-  opacity: 0.35;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
   z-index: 1;
-  top: -304px;
-  /* transition: all 0.3s ease-in; */
+  top: -300px;
+  transition: all 0.15s ease-in;
 }
 
-/* .image-container a {
-  transition: all 0.5s ease-in;
-} */
-
-.image-container a:hover + .overlay {
-  display: block;
+.image-container .overlay:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .image-container img {
+  display: block;
   max-width: 100%;
   height: 100%;
   margin: 0 auto;
   object-position: center;
   object-fit: cover;
-  transition: all 0.25s ease-in;
+  transition: all 0.25s ease-out;
 }
 
 .image-container:hover img {
@@ -243,7 +242,13 @@ main h2 {
 footer {
   /* position: relative;
   bottom: 0px; */
-  margin: 200px 0 60px;
+  /* margin: 200px 0 60px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: hsl(223, 61%, 65%);
+  min-height: 300px;
 }
 
 footer ul {
@@ -251,8 +256,14 @@ footer ul {
   justify-content: center;
   align-items: center;
   list-style: none;
+  margin-bottom: 2rem;
 }
 
 footer ul li {
   margin-left: 1rem;
+}
+
+footer ul li p {
+  color:hsl(0, 100%, 0%);
+  min-height: 10%;
 }
