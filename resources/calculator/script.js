@@ -10,6 +10,13 @@ const sendNumberValue = number => {
     calculatorDisplay.textContent = displayValue === '0' ? number : displayValue + number;
 };
 
+const addDecimal = () => {
+    // If no decimal, add one
+    if (!calculatorDisplay.textContent.includes('.')) {
+        calculatorDisplay.textContent = `${calculatorDisplay.textContent}.`;
+    }
+};
+
 
 // Add event listeners for numbers, operators, and decimal buttons
 inputButtons.forEach(inputButton => {
@@ -18,6 +25,15 @@ inputButtons.forEach(inputButton => {
     } else if (inputButton.classList.contains('operator')) {
         inputButton.addEventListener('click', () => sendNumberValue(inputButton.value));
     } else if (inputButton.classList.contains('decimal')) {
-        inputButton.addEventListener('click', () => sendNumberValue());
+        inputButton.addEventListener('click', addDecimal);
     }
 });
+
+
+// Reset the display
+const resetAll = () => {
+    calculatorDisplay.textContent = '0';
+};
+
+// Reset event listener
+clearBtn.addEventListener('click', resetAll);
