@@ -57,7 +57,7 @@ h3 {
 
 /* Progress */
 .progress-container {
-  background: #fff;
+  background-color: #fff;
   border-radius: 5px;
   cursor: pointer;
   margin: 40px 20px;
@@ -66,7 +66,7 @@ h3 {
 }
 
 .progress {
-  background: #242323;
+  background-color: #242323;
   border-radius: 5px;
   height: 100%;
   /* change this to show progress */
@@ -93,10 +93,13 @@ h3 {
   font-size: 30px;
   color: rgb(129, 129, 129);
   margin-right: 30px;
-
+  cursor: pointer;
+  user-select: none;
 }
 
-
+.fas:hover {
+  filter: brightness(80%);
+}
 
 .main-button {
   font-size: 40px;
