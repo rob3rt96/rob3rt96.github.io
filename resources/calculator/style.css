@@ -33,19 +33,22 @@ body {
   border-radius: 12px 12px 0 0;
 }
 
+.calculator-display header {
+  overflow-x: auto;
+}
+
 .calculator-display header h1 {
   font-size: 2.75rem;
   margin: 0;
   padding: 1.5rem;
   font-family: 'Lucida Console', sans-serif;
   font-weight: 100;
-  overflow-x: auto;
 }
 
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -53,11 +56,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(194, 154, 46);
+  background: hsl(203, 80%, 65%);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(50, 138, 179);
+  background: hsl(203, 80%, 35%);
 }
 
 
