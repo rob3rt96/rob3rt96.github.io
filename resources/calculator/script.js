@@ -2,6 +2,15 @@ const calculatorDisplay = document.querySelector('h1');
 const inputButtons = document.querySelectorAll('button');
 const clearBtn = document.getElementById('clear-btn');
 
+// Calculating first and second values, dependind on operator
+const calculate = {
+    '/': (firstNumber, secondNumber) => firstNumber / secondNumber,
+    '*': (firstNumber, secondNumber) => firstNumber * secondNumber,
+    '+': (firstNumber, secondNumber) => firstNumber + secondNumber,
+    '-': (firstNumber, secondNumber) => firstNumber - secondNumber,
+    '=': (firstNumber, secondNumber) => secondNumber
+};
+
 let firstValue = 0;
 let operatorValue = '';
 let awaitingNextValue = false;
@@ -31,15 +40,6 @@ const addDecimal = () => {
     }
 };
 
-// Calculating first and second values, dependind on operator
-const calculate = {
-    '/': (firstNumber, secondNumber) => firstNumber / secondNumber,
-    '*': (firstNumber, secondNumber) => firstNumber * secondNumber,
-    '+': (firstNumber, secondNumber) => firstNumber + secondNumber,
-    '-': (firstNumber, secondNumber) => firstNumber - secondNumber,
-    '=': (firstNumber, secondNumber) => secondNumber
-};
-
 
 const useOperator = operator => {
     const currentValue = Number(calculatorDisplay.textContent);
@@ -65,6 +65,16 @@ const useOperator = operator => {
     operatorValue = operator;
 };
 
+
+// Reset the display, and all values
+const resetAll = () => {
+    firstValue = 0;
+    operatorValue = '';
+    awaitingNextValue = false;
+    calculatorDisplay.textContent = '0';
+};
+
+
 // Add event listeners for numbers, operators, and decimal buttons
 inputButtons.forEach(inputButton => {
     if (inputButton.classList.length === 0) {
@@ -75,15 +85,6 @@ inputButtons.forEach(inputButton => {
         inputButton.addEventListener('click', addDecimal);
     }
 });
-
-
-// Reset the display, and all values
-const resetAll = () => {
-    firstValue = 0;
-    operatorValue = '';
-    awaitingNextValue = false;
-    calculatorDisplay.textContent = '0';
-};
 
 // Reset event listener
 clearBtn.addEventListener('click', resetAll);
