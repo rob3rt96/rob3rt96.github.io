@@ -33,11 +33,11 @@ body {
   border-radius: 12px 12px 0 0;
 }
 
-.calculator-display header {
+.calculator-display .display-value {
   overflow-x: auto;
 }
 
-.calculator-display header h1 {
+.calculator-display .display-value h1 {
   font-size: 2.75rem;
   margin: 0;
   padding: 1.5rem;

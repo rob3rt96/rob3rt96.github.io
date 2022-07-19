@@ -22,7 +22,7 @@ const sendNumberValue = number => {
         calculatorDisplay.textContent = number;
         awaitingNextValue = false;
     } else {
-        // If current display value is 0, replace it with what it was selected. If value is not 0, add the current value to the new value
+        // If current display value is 0, replace it with what it was selected. If value is not 0, attach the current value to the new value
         const displayValue = calculatorDisplay.textContent;
         calculatorDisplay.textContent = displayValue === '0' ? number : displayValue + number;
     }
