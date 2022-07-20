@@ -1,8 +1,17 @@
+/*
+    For this project I used the "HTML Audio/Video DOM Reference" info from https://www.w3schools.com/tags/ref_av_dom.asp
+*/
+
+
 const image = document.querySelector('img');
 const title = document.getElementById('title');
 const artist = document.getElementById('artist');
-
 const music = document.querySelector('audio');
+
+const currentTimeElem = document.getElementById('current-time');
+const durationElem = document.getElementById('duration');
+const progressContainer = document.getElementById('progress-container');
+const progress = document.getElementById('progress');
 const prevButton = document.getElementById('prev');
 const playButton = document.getElementById('play');
 const nextButton = document.getElementById('next');
@@ -100,6 +109,59 @@ function nextSong() {
 loadSong(songs[songIndex]);
 
 
-// Previous or Next - event listeners
+// Update Progress Bar and Time
+function updateProgressBar(e) {
+    if (isPlaying) {
+        const { duration, currentTime } = e.srcElement;
+        
+        // Update progress bar width
+        const progressPercent = (currentTime / duration) * 100;
+        progress.style.width = `${progressPercent}%`;
+
+        // Calculate display for duration
+        const durationMinutes = Math.floor(duration / 60);
+
+        let durationSeconds = Math.floor(duration % 60);
+        if (durationSeconds < 10) {
+            durationSeconds = `0${durationSeconds}`;
+        }
+
+        // Update duration displaying time and
+        // Delay switching duration Element to avoid NaN
+        if (durationSeconds || durationMinutes) {
+            durationElem.textContent = `${durationMinutes}:${durationSeconds}`;
+        }
+
+         // Calculate display for duration
+        const currentMinutes = Math.floor(currentTime / 60);
+
+        let currentSeconds = Math.floor(currentTime % 60);
+        if (currentSeconds < 10) {
+            currentSeconds = `0${currentSeconds}`;
+        }
+
+        currentTimeElem.textContent = `${currentMinutes}:${currentSeconds}`;
+    }
+}
+
+// Set Progress Bar by Click
+const setProgressBar = e => {
+    // Getting the width in pixels of the progress bar
+    const width = e.target.clientWidth;
+    console.log('width: ', width);
+
+    // Getting the position of the click, on the progress bar
+    const clickOnX = e.offsetX;
+
+    const { duration } = music;
+
+    music.currentTime = (clickOnX / width) * duration;  // currentTime attribute - Sets or returns the current playback position in the audio/video (in seconds)
+};
+
+
+// Event listeners
 prevButton.addEventListener('click', prevSong);
 nextButton.addEventListener('click', nextSong);
+music.addEventListener('ended', nextSong);
+music.addEventListener('timeupdate', updateProgressBar);    // timeupdate - Fires when the current playback position has changed. It changes four times a second.
+progressContainer.addEventListener('click', setProgressBar);
