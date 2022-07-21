@@ -10,8 +10,14 @@ const music = document.querySelector('audio');
 
 const currentTimeElem = document.getElementById('current-time');
 const durationElem = document.getElementById('duration');
+
+const volumeIcon = document.getElementById('volume-icon');
+const volumeRange = document.getElementsByClassName('volume-range')[0];
+const volumeBar = document.getElementsByClassName('volume-bar')[0];
+
 const progressContainer = document.getElementById('progress-container');
 const progress = document.getElementById('progress');
+
 const prevButton = document.getElementById('prev');
 const playButton = document.getElementById('play');
 const nextButton = document.getElementById('next');
@@ -146,9 +152,9 @@ function updateProgressBar(e) {
 
 // Set Progress Bar by Click
 const setProgressBar = e => {
+    console.log(e);
     // Getting the width in pixels of the progress bar
     const width = e.target.clientWidth;
-    console.log('width: ', width);
 
     // Getting the position of the click, on the progress bar
     const clickOnX = e.offsetX;
@@ -158,6 +164,69 @@ const setProgressBar = e => {
     music.currentTime = (clickOnX / width) * duration;  // currentTime attribute - Sets or returns the current playback position in the audio/video (in seconds)
 };
 
+// Volume controls
+let lastVolume = 1;
+let lastVolumeIcon = 'fa-volume-up';
+let isMute = false;
+
+// Set Volume Bar by Click
+const changeVolume = e => {
+    // Getting the width in pixels of the progress bar
+    const width = e.target.clientWidth;
+
+    // Getting the position of the click, on the progress bar
+    const clickOnX = e.offsetX;
+
+    let volume = clickOnX / width;
+
+    // Rounding volume up or down
+    if (volume < 0.1) {
+        volume = 0;
+    }
+
+    if (volume > 0.9) {
+        volume = 1;
+    }
+
+    volumeBar.style.width = `${volume * 100}%`;
+    music.volume = volume;
+
+    // Change icon based on volume
+    volumeIcon.className = '';
+    if (volume > 0.6) {
+        volumeIcon.classList.add('fas', 'fa-volume-up');
+        lastVolumeIcon = volumeIcon.classList[volumeIcon.classList.length - 1];
+    } else if (volume < 0.6 && volume > 0) {
+        volumeIcon.classList.add('fas', 'fa-volume-down');
+        lastVolumeIcon = volumeIcon.classList[volumeIcon.classList.length - 1];
+    } else if (volume === 0) {
+        volumeIcon.classList.add('fas', 'fa-volume-off');
+        lastVolumeIcon = volumeIcon.classList[volumeIcon.classList.length - 1];
+    }
+
+    lastVolume = volume;
+};
+
+// Mute or Unmute
+const muteUnmute = () => {
+    volumeIcon.className = '';
+
+    if (!isMute) {
+        lastVolume = music.volume;
+        music.volume = 0;
+        volumeBar.style.width = 0;
+        volumeIcon.classList.add('fas', 'fa-volume-mute');
+        volumeIcon.setAttribute('title', 'Unmute');
+        isMute = true;
+    } else { 
+        music.volume = lastVolume;
+        volumeBar.style.width = `${lastVolume * 100}%`;
+        volumeIcon.classList.add('fas', lastVolumeIcon);
+        volumeIcon.setAttribute('title', 'Mute');
+        isMute = false;
+    }
+};
+
 
 // Event listeners
 prevButton.addEventListener('click', prevSong);
@@ -165,3 +234,5 @@ nextButton.addEventListener('click', nextSong);
 music.addEventListener('ended', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);    // timeupdate - Fires when the current playback position has changed. It changes four times a second.
 progressContainer.addEventListener('click', setProgressBar);
+volumeRange.addEventListener('click', changeVolume);
+volumeIcon.addEventListener('click', muteUnmute);
