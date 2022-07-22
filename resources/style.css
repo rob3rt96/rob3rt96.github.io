@@ -9,7 +9,9 @@ html {
 }
 
 body {
-  background-color: azure;
+  background: #ffffff;   /*fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, hsl(0, 25%, 90%), hsl(0, 2%, 74%));   Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, hsl(0, 25%, 90%), hsl(0, 2%, 74%));  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 
@@ -20,7 +22,7 @@ body nav {
   font-size: 1.5rem;
   width: 100%;
   min-height: 2.5rem;
-  background-color: dodgerblue;
+  background-color: hsl(115, 12%, 81%);
   position: fixed;
   top: 0px;
   display: flex;
@@ -35,7 +37,7 @@ body nav {
 } */
 
 #homepage-link:visited {
-  color: rgb(243, 154, 53);
+  color: hsl(0, 0%, 100%);
 }
 
 nav ul {
@@ -60,10 +62,17 @@ nav ul li a:hover, #homepage-link:hover {
   text-decoration: underline;
 } */
 
-nav ul li a, #homepage-link {
+nav ul li a {
   display: inline-block;
   text-decoration: none;
-  color:rgb(243, 154, 53);
+  color:hsl(26, 58%, 20%);
+  position: relative;
+}
+
+#homepage-link {
+  display: inline-block;
+  text-decoration: none;
+  color:hsl(0, 0%, 100%);
   position: relative;
 }
 
@@ -74,7 +83,7 @@ nav ul li a::after, #homepage-link::after {
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: cyan;
+  background-color: hsl(119, 73%, 80%);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.35s linear;
@@ -93,36 +102,42 @@ main {
 }
 
 .banner {
+  position: relative;
+  top: 2rem;
   max-width: 80%;
   min-height: 300px;
   margin: 0 auto;
-  background-color: lightsteelblue;
+  background-image: url(./images/kiwihug-MS9Tnh3if1o-unsplash.jpg);   /*Photo by Kiwihug on Unsplash  */
+  background-position: center;
+  background-size: cover;
 }
 
 .banner header {
   display: flex;
+  width: 100%;
+  height: 300px;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
-  /* padding: 0.5rem 0; */
+  background-color: hsla(250, 80%, 70%, 0.45);
 }
 
-main .banner img {
+.banner header img {
   max-width: 300px;
+  height: auto;
   border-radius: 50%;
-  margin-top: 1rem;
+  /* margin-top: 2rem; */
 }
 
 .text-container {
   margin-left: 1.75rem;
 }
 
-main h1 {
+.text-container  h1 {
   font-family: 'Noto Sans', sans-serif;
   font-size: 3rem;
 }
 
-main h2 {
+.text-container h2 {
   font-family: 'Noto Serif', serif;
   font-size: 2.25rem;
 }
@@ -134,11 +149,12 @@ main h2 {
   min-height: 800px;
   margin: 3rem auto;
   padding: 3rem 0;
-  background-color: hsl(194, 70%, 40%);
+  background-color: hsl(26, 91%, 40%);
 }
 
 .proj-container {
   display: flex;
+  max-width: 100%;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
@@ -147,7 +163,7 @@ main h2 {
 }
 
 .project {
-  background-color: hsl(22, 65%, 35%);
+  background-color: hsla(56, 79%, 54%, 0.3);
   margin-left: 1.25rem;
   /* max-width: 450px; */
   width: 450px;
@@ -215,7 +231,7 @@ main h2 {
   border-radius: 20px;
   font-size: 1.25rem;
   font-family: 'Noto Sans Mono', monospace;
-  background-color: hsl(120, 63%, 39%);
+  background-color: hsl(115, 83%, 40%);
   color: hsl(0, 100%, 0%);
   margin: 0 auto;
   padding: 1.25em 2.5em;
@@ -226,11 +242,11 @@ main h2 {
   cursor: pointer;
   font-size: 1.5rem;
   padding: 0.925em 2.5em;
-  background-color: hsl(120, 50%, 50%);
+  background-color: hsl(115, 83%, 55%);
 }
 
 .projects .button-container button:active {
-  background-color: hsl(120, 63%, 70%);
+  background-color: hsl(115, 83%, 75%);
 }
 
 .button-container a {
@@ -247,7 +263,7 @@ footer {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  background-color: hsl(223, 61%, 65%);
+  background-color: hsla(250, 80%, 70%, 0.7);
   min-height: 300px;
 }
 
