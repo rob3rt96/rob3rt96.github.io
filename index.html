@@ -4,84 +4,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Popescu's Portofolio Website</title>
+    <title>DevRob Portfolio Website</title>
     <link rel="icon" type="img/png" href="./resources/images/R_logo_2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='./resources/style.css' rel='stylesheet'>
   </head>
 
   <body>
     <header>
-      <nav>
-        <a href="./index.html" id="homepage-link"><p id="homepage">Robert Popescu</p></a>   
-        <ul>
-          <li><a href="#"><p>About me</p></a></li>
-          <li><a href="#"><p>Projects</p></a></li>
-          <li><a href="#"><p>Current skills</p></a></li>
-          <li><a href="#"><p>Contact</p></a></li>
+      <div class="logo">
+        <img src="./resources/images/logo2_normal.png" alt="">
+      </div>
+
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">My Work</a></li>          
+          <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <!-- Top banner -->
-      <section class="banner">
-        <header>
-          <img src="./resources/images/IMG_9617 - Copy.JPG" alt="Robert Popescu's profile picture">
-          <div class="text-container">
-            <h1>Hi</h1>
-            <h2>I'm Robert, a self-taught software developer!</h2>
-          </div>
-        </header>      
+
+      <!-- === Introduction === -->
+      <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+          Hi, I'm <strong>Robert Popescu</strong>,
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">a front-end Dev</p>
+        <img src="./resources/images/IMG_9617 - Copy.JPG" alt="A picture of Robert Popescu in front of a white background">
       </section>
 
-      <!-- Projects -->
-      <section class="projects">
-        <article class="proj-container">
-          <section class="project">
-            <div class="image-container">
-              <img id="fotomatic" src="./resources/images/fotomatic.png" alt="The Fotomatic website's picture">
-              <a href="https://rob3rt96.github.io/Fotomatic_project/" target="_blank">
-                <div class="overlay"></div>
-              </a>
-            </div>
-            <h3>A responsive website</h3>
-          </section>
-          <section class="project">
-            <div class="image-container">
-              <img src="./resources/images/calculator.png" alt="The Calculator website's picture">
-              <a href="./resources/projects/calculator/index.html">
-                <div class="overlay"></div>
-              </a>
-            </div>
-            <h3>A simple Calculator</h3>
-          </section>
-          <section class="project">
-            <div class="image-container">
-              <img src="./resources/images/music-player.png" alt="The Music Player website's picture">
-              <a href="./resources/projects/music_player/index.html">
-                <div class="overlay"></div>
-              </a>
-            </div>
-            <h3>An online Music Player</h3>
-          </section>
-        </article>
-        <article class="button-container">
-          <button><a href="#">See more</a></button>
-        </article>
+
+      <!-- === About me === -->
+      <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Who I am</h2>
+        <p class="section__subtitle section__subtitle--about"></p>
+
+        <div class="about-me__body">
+          <p></p>
+          <p></p>
+        </div>
+
+        <img src="./resources/images/DSC_0770 - Copy.JPG" alt="Robert leaning against a railing">
       </section>
 
-      <!-- Footer -->
+
+      <!-- === My work === -->
+      <section class="my-work" id="work">
+        <h2 class="section__title"></h2>
+        <p class="section__subtitle"></p>
+
+        <div class="portfolio">
+          <!-- Portfolio item 01 -->
+          <a href="#" class="portfolio__item">
+            <img src="./resources/images/fotomatic.png" alt="" class="portfolio__img">
+          </a>
+
+          <!-- Portfolio item 02 -->
+          <a href="#" class="portfolio__item">
+            <img src="./resources/images/calculator.png" alt="" class="portfolio__img">
+          </a>
+
+          <!-- Portfolio item 03 -->
+          <a href="#" class="portfolio__item">
+            <img src="./resources/images/music-player.png" alt="" class="portfolio__img">
+          </a>
+        </div>
+      </section>
+
+
+      <!-- === Footer === -->
       <footer>
-        <ul>
-          <li><span id="current-date"></span></li>
-          <li><p>&copy; Copyright reserved</p></li>
-          <li><a href="#"><p>Terms of use</p></a></li>
+        <a href="mailto:robert.popescu9612@gmail.com" class="footer__link">robert.popescu9612@gmail.com</a>
+        <ul class="social-list">
+          <li class="social-list__item"><a href="" class="social-list__link">Linkedin</a></li>
+          <li class="social-list__item"><a href="" class="social-list__link">Github</a></li>
+          <li class="social-list__item"><a href="" class="social-list__link">My Resume</a></li>
         </ul>
+
+        <div class="home-button">
+          <a href="#home">
+            <img src="./resources/images/logo2_dark.png" alt="">
+          </a>
+        </div>        
       </footer>
     </main>
+      
 
     <!-- Script -->
     <script src="./resources/script.js"></script>

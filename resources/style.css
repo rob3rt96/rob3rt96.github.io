@@ -1,285 +1,95 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-html {
+
+/* === Custom Properties === */
+
+:root {
   font-size: 16px;
+  --ff-primary: 'Noto Sans', sans-serif;           /*ff stands for "font family" */
+  --ff-secondary: 'Noto Sans Mono', monospace;
+
+  --fw-regular: 400;                              /*fw stands for "font weight" */
+  --fw-bold: 700;
+
+  --clr-light: hsl(0, 0%, 100%);
+  --clr-dark: hsl(0, 0%, 8%);
+  --clr-accent: hsl(207, 86%, 41%);
+
+  --fs-h1: 3rem;                                  /*fs stands for "font size" */
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
 }
+
+@media only screen and (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+
+
+/* === General Styles === */
 
 body {
-  background: #ffffff;   /*fallback for old browsers */
+  background: var(--clr-light);  /*fallback for old browsers */
   /*background: -webkit-linear-gradient(to right, hsl(0, 25%, 90%), hsl(0, 2%, 74%));   Chrome 10-25, Safari 5.1-6 */
   /*background: linear-gradient(to right, hsl(0, 25%, 90%), hsl(0, 2%, 74%));  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: var(var(--clr-dark));
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+
+/* === Typography === */
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+
 
 
 /* ==== Nav bar ==== */
 
-body nav {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 1.5rem;
-  width: 100%;
-  min-height: 2.5rem;
-  background-color: hsl(115, 12%, 81%);
-  position: fixed;
-  top: 0px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 2;
-}
 
-/* #homepage-link {
-  text-decoration: none;
-  color: rgb(243, 154, 53);
-} */
-
-#homepage-link:visited {
-  color: hsl(0, 0%, 100%);
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  align-items: center;
-}
-
-nav ul li {
-  margin-left: 2.25rem;
-}
-
-/* nav ul li a, #homepage-link {
-  color: rgb(243, 154, 53);
-  text-decoration: none;
-  transition: all 0.3s linear;
-}
-
-nav ul li a:hover, #homepage-link:hover {
-  color: dimgray;
-  text-decoration: underline;
-} */
-
-nav ul li a {
-  display: inline-block;
-  text-decoration: none;
-  color:hsl(26, 58%, 20%);
-  position: relative;
-}
-
-#homepage-link {
-  display: inline-block;
-  text-decoration: none;
-  color:hsl(0, 0%, 100%);
-  position: relative;
-}
-
-nav ul li a::after, #homepage-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background-color: hsl(119, 73%, 80%);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.35s linear;
-}
-
-nav ul li a:hover::after, #homepage-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
 
 
 /* ==== Main ==== */
-main {
-  position: relative;
-  top: 2.5rem;
-}
-
-.banner {
-  position: relative;
-  top: 2rem;
-  max-width: 80%;
-  min-height: 300px;
-  margin: 0 auto;
-  background-image: url(./images/kiwihug-MS9Tnh3if1o-unsplash.jpg);   /*Photo by Kiwihug on Unsplash  */
-  background-position: center;
-  background-size: cover;
-}
-
-.banner header {
-  display: flex;
-  width: 100%;
-  height: 300px;
-  justify-content: center;
-  align-items: center;
-  background-color: hsla(250, 80%, 70%, 0.45);
-}
-
-.banner header img {
-  max-width: 300px;
-  height: auto;
-  border-radius: 50%;
-  /* margin-top: 2rem; */
-}
-
-.text-container {
-  margin-left: 1.75rem;
-}
-
-.text-container  h1 {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 3rem;
-}
-
-.text-container h2 {
-  font-family: 'Noto Serif', serif;
-  font-size: 2.25rem;
-}
 
 
 /* ==== Projects ==== */
-.projects {
-  max-width: 80%;
-  min-height: 800px;
-  margin: 3rem auto;
-  padding: 3rem 0;
-  background-color: hsl(26, 91%, 40%);
-}
 
-.proj-container {
-  display: flex;
-  max-width: 100%;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  margin: 0 auto;
-  /* flex: 0 1 350px; */
-}
-
-.project {
-  background-color: hsla(56, 79%, 54%, 0.3);
-  margin-left: 1.25rem;
-  /* max-width: 450px; */
-  width: 450px;
-  height: 400px;
-  /* overflow: hidden; */
-  border-radius: 15px;
-}
-
-.project h3 {
-  max-width: 60%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.image-container {
-  max-width: 300px;
-  height: 300px;
-  margin: 1rem auto;
-  overflow: hidden;
-}
-
-.image-container .overlay {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  background-color: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  z-index: 1;
-  top: -300px;
-  transition: all 0.15s ease-in;
-}
-
-.image-container .overlay:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.image-container img {
-  display: block;
-  max-width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  object-position: center;
-  object-fit: cover;
-  transition: all 0.25s ease-out;
-}
-
-.image-container:hover img {
-  transform: scale(1.05);
-}
-
-.image-container #fotomatic {
-  object-position: left;
-}
-
-.projects .button-container {
-  max-width: 100%;
-  height: auto;
-  margin-top: 10rem;
-}
-
-.projects .button-container button {
-  display: block;
-  width: 25%;
-  border-radius: 20px;
-  font-size: 1.25rem;
-  font-family: 'Noto Sans Mono', monospace;
-  background-color: hsl(115, 83%, 40%);
-  color: hsl(0, 100%, 0%);
-  margin: 0 auto;
-  padding: 1.25em 2.5em;
-  transition: all 0.2s ease-in;
-}
-
-.projects .button-container button:hover {
-  cursor: pointer;
-  font-size: 1.5rem;
-  padding: 0.925em 2.5em;
-  background-color: hsl(115, 83%, 55%);
-}
-
-.projects .button-container button:active {
-  background-color: hsl(115, 83%, 75%);
-}
-
-.button-container a {
-  text-decoration: none;
-  color: hsl(0, 100%, 0%);
-}
 
 /* ==== Footer ==== */
-footer {
-  /* position: relative;
-  bottom: 0px; */
-  /* margin: 200px 0 60px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: hsla(250, 80%, 70%, 0.7);
-  min-height: 300px;
-}
-
-footer ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin-bottom: 2rem;
-}
-
-footer ul li {
-  margin-left: 1rem;
-}
-
-footer ul li p {
-  color:hsl(0, 100%, 0%);
-  min-height: 10%;
-}
