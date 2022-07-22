@@ -9,7 +9,9 @@ html {
 }
 
 body {
-  background-color: azure;
+  background: #ffffff;   /*fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, hsl(0, 25%, 90%), hsl(0, 2%, 74%));   Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, hsl(0, 25%, 90%), hsl(0, 2%, 74%));  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 
@@ -20,7 +22,7 @@ body nav {
   font-size: 1.5rem;
   width: 100%;
   min-height: 2.5rem;
-  background-color: hsl(115, 83%, 40%);
+  background-color: hsl(115, 12%, 81%);
   position: fixed;
   top: 0px;
   display: flex;
