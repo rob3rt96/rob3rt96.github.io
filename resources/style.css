@@ -253,9 +253,11 @@ strong {
     height: 75%;
     margin: 0 auto;
     overflow: hidden;
+    text-decoration: none;
   }
 
   .portfolio__item__link:focus {
+    outline: 2px solid var(--clr-light);
     position: relative;
     z-index: 2;
   }
@@ -270,10 +272,26 @@ strong {
       opacity 0.25s linear;
   }
 
+  .portfolio__img__title {
+    margin: 0;
+    font-size: var(--fs-h3);
+    font-family: var(--ff-secondary);
+    color: var(--clr-light);
+    background-color: var(--clr-accent);
+    opacity: 0.75;
+    transition: transform 0.75s ease-in-out;
+    text-decoration: none;
+  }
+
   .portfolio__img:hover,
   .portfolio__item__link:focus .portfolio__img {
     transform: scale(1.2);
     opacity: 0.5;
+  }  
+
+  .portfolio__item__link:hover > .portfolio__img__title,
+  .portfolio__item__link:focus .portfolio__img__title {
+    transform: translateY(-250px);
   }
 
   .portfolio__item__codes {
@@ -285,6 +303,7 @@ strong {
 
   .portfolio__code {
     border: solid 1.5px var(--clr-light);
+    border-radius: 0.5em;
     padding: 0.75em 0.5em;
     color: var(--clr-light);
     transition: all 0.25s linear;
@@ -301,6 +320,10 @@ strong {
     color: var(--clr-dark);
   }
 
+  .portfolio__code:focus {
+    outline: 2px solid var(--clr-light);
+  }
+
   .portfolio__code + .portfolio__code {
     margin-left: 1.5em;
   }
@@ -314,4 +337,59 @@ strong {
     margin: 0;
   }
 
+
   /* ==== Footer ==== */
+
+  .footer {
+    background-color: hsl(0, 0%, 10%);
+    color: var(--clr-accent);
+    font-size: var(--fs-h3);
+    text-align: center;
+    padding: 2.5em 0;
+  }
+
+  .footer__home-button {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .footer a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+  }
+
+  .social-list__item {
+    margin: 0 0.5em;
+  }
+
+  .social-list__link {
+    padding: 0.5em;
+  }
+
+  .social-list__link:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+
+  .footer__copyright {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+    font-size: var(--fs-body);
+    color: var(--clr-light);
+  }
+
+  .footer__copyright li + li {
+    margin: 0 0.5em;
+  }
