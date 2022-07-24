@@ -243,6 +243,7 @@ strong {
 
   .intro {
     position: relative;
+    background-color: #444;
   }
 
   .intro__img {
@@ -255,8 +256,12 @@ strong {
 
   @media only screen and (min-width: 600px) {
     .intro {
+      background-image: url(./images/clement-helardot-95YRwf6CNw8-unsplash.jpg);
+      background-position: center;
+      background-size: cover;
       display: grid;
       width: min-content;
+      height: 800px;
       margin: 0 auto;
       grid-template-areas: 
       "img title"
@@ -273,6 +278,14 @@ strong {
       z-index: 2;
     }
 
+    .section__title--intro {
+      background-color: #333;
+    }
+
+    .section__title--intro strong {
+      color: var(--clr-accent);
+    }
+    
     .section__subtitle--intro {
       align-self: start;
       grid-column: -1 / 1;
@@ -346,7 +359,7 @@ strong {
   .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0 1em;
+    gap: 0.5em 1em;
     max-width: 1500px;
     margin: 0 auto;
   }
@@ -446,6 +459,34 @@ strong {
   .icon__text {
     display: inline-block;
     margin: 0;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .portfolio__item__codes {
+      display: flex;
+      margin: 0.5em 0 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .portfolio__code {
+      border: solid 1.5px var(--clr-light);
+      border-radius: 0.25em;
+      padding: 0.5em 0.25em;
+      text-decoration: none;
+    }
+
+    .portfolio__code + .portfolio__code {
+      margin-left: 0.5em;
+    }
+
+    .icon {
+      font-size: var(--fs-h3);
+    }
+
+    .icon__text {
+      font-size: 12px;
+    }
   }
 
 
