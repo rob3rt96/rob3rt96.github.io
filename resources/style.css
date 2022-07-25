@@ -241,27 +241,56 @@ strong {
 
   /* ==== Introduction ==== */
 
+  .hero {
+    background-image: url(./images/laptop_background2.jpg);
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    height: 85vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -10;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #444, #666, #444, #666);
+    opacity: 0.55;
+    z-index: -11;
+  }
+  
   .intro {
     position: relative;
-    background-color: #444;
+    /* background-color: #444; */
   }
 
   .intro__img {
     box-shadow: var(--bs);
   }
 
-  /* .section__subtitle--intro {
-    display: inline-block;
-  } */
+  .section__title--intro {
+    text-shadow: 3px 2px 4px hsl(0, 0%, 10%), 5px 5px 5px hsl(0, 0%, 20%);
+  }
+
+  .section__subtitle--intro {
+    /* display: inline-block; */
+    box-shadow: var(--bs);
+  }
+
 
   @media only screen and (min-width: 600px) {
+
     .intro {
-      background-image: url(./images/clement-helardot-95YRwf6CNw8-unsplash.jpg);
-      background-position: center;
-      background-size: cover;
       display: grid;
       width: min-content;
-      height: 800px;
+      height: 85vh;
       margin: 0 auto;
       grid-template-areas: 
       "img title"
@@ -269,6 +298,7 @@ strong {
       grid-template-columns: min-content max-content;
       /* column-gap: 1em; */
       gap: 0 1em;
+      background-color: transparent;
     }
 
     .intro__img {
@@ -278,9 +308,9 @@ strong {
       z-index: 2;
     }
 
-    .section__title--intro {
+    /* .section__title--intro {
       background-color: #333;
-    }
+    } */
 
     .section__title--intro strong {
       color: var(--clr-accent);
@@ -309,13 +339,26 @@ strong {
     box-shadow: var(--bs);
   }
 
+  .about-me__technologies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100px;
+    width: auto;
+  }
+
+  .technology + .technology{
+    margin-left: 0.7em;
+  }
+
   @media only screen and (min-width: 600px) {
     .about-me {
       display: grid;
       grid-template-areas: 
         "title img"
         "subtitle img"
-        "text img";
+        "text img"
+        "tech tech";
       grid-template-columns: 1fr 240px;
       gap: 0 1.5em;
     }
@@ -338,6 +381,11 @@ strong {
       grid-area: img;
       position: relative;
       z-index: 2;
+    }
+
+    .about-me__technologies {
+      grid-area: tech;
+      max-height: 150px;
     }
   }
 
