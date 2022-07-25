@@ -19,6 +19,10 @@
         <img src="./resources/images/logo2_normal.png" alt="">
       </div>
 
+      <button class="contact-close" aria-label="toggle contact">
+        <span class="exit"></span>
+      </button>
+
       <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
       </button>
@@ -28,7 +32,7 @@
           <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
           <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
           <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>          
-          <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link contact__link">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -164,9 +168,28 @@
         <ul class="footer__copyright">
           <li><span id="current-date"></span></li>
           <li><span>&copy;</span></li>
-          <li><a href="#"><span>Contact</span></a></li>
+          <li><a href="#" class="contact__link"><span>Contact</span></a></li>
         </ul>               
       </footer>
+
+
+      <!-- === Contact === -->
+      <section class="contact" id="contact">
+        <form action="https://formsubmit.co/robert.popescu9612@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="You got a new message!">
+          <h2>Message Me</h2>
+          <label for="name">Full Name: </label>
+          <input type="text" id="name" name="full-name" placeholder="ex: John Smith" minlength="2" maxlength="40" required>
+
+          <label for="mail">E-mail: </label>
+          <input type="email" id="mail" name="email" placeholder="ex: john.smith@gmail.com" minlength="5" maxlength="100" required>
+
+          <label for="message">Message: </label>
+          <textarea id="message" name="message" rows="6" cols="30" placeholder="Let's talk..." minlength="2" maxlength="500" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
     </main>
       
 
