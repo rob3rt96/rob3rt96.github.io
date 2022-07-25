@@ -694,3 +694,14 @@ strong {
  .contact-open .contact-close {
     display: block;
   }
+
+  @media only screen and (max-width: 600px) {
+    .contact form {
+      max-width: 95%;
+      padding: 1em 2em;
+    }
+
+    .contact form h2 {
+      font-size: var(--fs-h3);
+    }
+  }
