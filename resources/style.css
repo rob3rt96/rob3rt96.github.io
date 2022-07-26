@@ -210,6 +210,11 @@ strong {
   transform: rotate(90deg) translateX(-6px);
 }
 
+.contact-close:hover > a .exit,
+.contact-close:hover > a .exit::before {
+  background-color: hsl(0, 85%, 55%);
+}
+
 .nav-toggle {
   /* height: 2em; */
   padding: 0.5em;
@@ -220,6 +225,7 @@ strong {
   right: 2em;
   top: 2em;
   z-index: 100;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-open .nav {
@@ -272,6 +278,17 @@ strong {
 
 .hamburger::after {
   bottom: 6px;
+}
+
+/* .hamburger:hover,
+.hamburger::before:hover,
+.hamburger::after:hover {
+  transform: scale(1.2);
+} */
+
+.nav-toggle:hover {
+  transform: scale(1.25);
+  border: dotted 1px #444;
 }
 
 
@@ -631,6 +648,11 @@ strong {
 
   .footer__copyright li + li {
     margin: 0 0.5em;
+  }
+
+  .footer__copyright li a:hover {
+    color: hsl(0, 85%, 55%);
+    text-decoration: underline;
   }
 
 
