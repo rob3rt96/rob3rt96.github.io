@@ -567,16 +567,17 @@ strong {
 
   @media only screen and (max-width: 600px) {
     .portfolio {
-      width: 450px;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
       margin: 0 auto;
     }
 
     .portfolio__item {
-      max-width: 80%;
+      width: 90%;
       height: auto;
       padding-bottom: 0.5em;
+      margin: 0 auto;
     }
 
     .portfolio__img:hover,
