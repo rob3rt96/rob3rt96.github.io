@@ -41,3 +41,8 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 
 ### My name is Robert Popescu and I am passionate about the web and software development.
 
+This is my portfolio website, where you can find links to my contacts, info about the recent projects that I made and my Resume/CV.
+
+
+![Image](./resources/images/website_example.jpg)
+
